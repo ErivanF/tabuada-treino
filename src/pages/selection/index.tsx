@@ -2,6 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, FormProvider } from "react-hook-form";
 import { schema } from "./schema";
 import RadioItem from "../../components/RadioItem";
+import { useNavigate } from "react-router-dom";
 interface RadioProps {
   value: string;
   label: string;
@@ -26,9 +27,10 @@ const numeros: RadioProps[] = [
 ];
 const Selection = () => {
   const methods = useForm({ resolver: yupResolver(schema) });
-
+  const navigate = useNavigate();
   const start = (data: any) => {
     console.log(data);
+    navigate(`${data.operation}/${data.number}`);
   };
 
   return (
