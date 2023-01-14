@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 
 const Main = () => {
-  const teste = useParams();
-  console.log(teste);
+  const { operation, number } = useParams();
+
   return (
     <div>
-      <div>Operação: {teste.operation}</div>
-      <div>Numero: {teste.number}</div>
+      <div>Operação: {operation}</div>
+      <div>Numero: {number}</div>
     </div>
   );
 };
