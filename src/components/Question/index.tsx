@@ -5,33 +5,57 @@ import { Container } from "./style";
 interface QuestionProps {
   question: string;
   answer: string;
+  // next: () => void;
 }
 const Question = ({ question, answer }: QuestionProps) => {
   const { correct, wrong } = useResult();
-  const [result, setResult] = useState<string>("");
-  useEffect(() => {
-    setResult("");
-  }, [question]);
+  const [input, setInput] = useState<string>("");
+  const [displayQuestion, setDisplayQuestion] = useState<boolean>(true);
+  const onSubmit = () => {
+    if (input === answer) {
+      correct();
+    } else {
+      wrong();
+    }
+    setDisplayQuestion(false);
+  };
   return (
     <Container>
-      <div className="question">{question}</div>
-      <input
-        type="number"
-        onChange={(e) => {
-          setResult(e.target.value);
-        }}
-      />
-      <input
-        type="button"
-        value="Responder"
-        onClick={() => {
-          if (result === answer) {
-            correct();
-          } else {
-            wrong();
-          }
-        }}
-      />
+      {displayQuestion ? (
+        <div className="display">
+          <div className="question">{question}</div>
+          <input
+            autoFocus={true}
+            type="number"
+            onChange={(e) => {
+              setInput(e.target.value);
+            }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                onSubmit();
+              }
+            }}
+          />
+          <input type="button" value="Responder" onClick={onSubmit} />
+        </div>
+      ) : (
+        <div className="result">
+          <p>
+            {input === answer
+              ? "Resposta correta"
+              : `Incorreto. A resposta correta é ${answer}`}
+          </p>
+          <button
+            autoFocus={true}
+            onClick={() => {
+              setInput("");
+              setDisplayQuestion(true);
+            }}
+          >
+            Continuar
+          </button>
+        </div>
+      )}
     </Container>
   );
 };
