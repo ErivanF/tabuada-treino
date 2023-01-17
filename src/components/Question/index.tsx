@@ -5,19 +5,21 @@ import { Container } from "./style";
 interface QuestionProps {
   question: string;
   answer: string;
-  // next: () => void;
+  next: () => void;
 }
-const Question = ({ question, answer }: QuestionProps) => {
+const Question = ({ question, answer, next }: QuestionProps) => {
   const { correct, wrong } = useResult();
   const [input, setInput] = useState<string>("");
   const [displayQuestion, setDisplayQuestion] = useState<boolean>(true);
   const onSubmit = () => {
-    if (input === answer) {
-      correct();
-    } else {
-      wrong();
+    if (input) {
+      if (input === answer) {
+        correct();
+      } else {
+        wrong();
+      }
+      setDisplayQuestion(false);
     }
-    setDisplayQuestion(false);
   };
   return (
     <Container>
@@ -48,6 +50,7 @@ const Question = ({ question, answer }: QuestionProps) => {
           <button
             autoFocus={true}
             onClick={() => {
+              next();
               setInput("");
               setDisplayQuestion(true);
             }}
