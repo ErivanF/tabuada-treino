@@ -1,4 +1,5 @@
 import { useFormContext } from "react-hook-form";
+import { Container } from "./style";
 
 const RadioItem = ({
   name,
@@ -12,7 +13,7 @@ const RadioItem = ({
   const { register } = useFormContext();
   const id = `Form${value}`;
   return (
-    <div>
+    <Container>
       <input
         type="radio"
         aria-label={label}
@@ -21,7 +22,7 @@ const RadioItem = ({
         {...register(name)}
       />
       <label htmlFor={id}>{label}</label>
-    </div>
+    </Container>
   );
 };
 export default RadioItem;

@@ -4,6 +4,7 @@ import { schema } from "./schema";
 import RadioItem from "../../components/RadioItem";
 import { useNavigate } from "react-router-dom";
 import { useResult } from "../../providers/ResultProvider";
+import { Container } from "./style";
 interface RadioProps {
   value: string;
   label: string;
@@ -36,7 +37,7 @@ const Selection = () => {
   };
 
   return (
-    <div>
+    <Container>
       <FormProvider {...methods}>
         <h2>Selecione a Operação</h2>
         {operacoes.map((op) => (
@@ -58,7 +59,7 @@ const Selection = () => {
         ))}
         <button onClick={methods.handleSubmit(start)}>Iniciar</button>
       </FormProvider>
-    </div>
+    </Container>
   );
 };
 
