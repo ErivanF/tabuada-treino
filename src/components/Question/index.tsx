@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useResult } from "../../providers/ResultProvider";
 import { Container } from "./style";
 
@@ -20,6 +20,11 @@ const Question = ({ question, answer, next }: QuestionProps) => {
       }
       setDisplayQuestion(false);
     }
+  };
+  const reset = () => {
+    next();
+    setInput("");
+    setDisplayQuestion(true);
   };
   return (
     <Container>
@@ -47,16 +52,7 @@ const Question = ({ question, answer, next }: QuestionProps) => {
               ? "Resposta correta"
               : `Incorreto. A resposta correta é ${answer}`}
           </p>
-          <button
-            autoFocus={true}
-            onClick={() => {
-              next();
-              setInput("");
-              setDisplayQuestion(true);
-            }}
-          >
-            Continuar
-          </button>
+          <input type="button" value="Próxima" onClick={reset} />
         </div>
       )}
     </Container>
