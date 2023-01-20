@@ -1,7 +1,9 @@
 import { Link, useParams } from "react-router-dom";
+import Multiplicacao from "../../components/Multiplicacao";
 
 import Results from "../../components/Results";
 import Soma from "../../components/Soma";
+import Subtracao from "../../components/Subtracao";
 import { useResult } from "../../providers/ResultProvider";
 import { Container } from "./style";
 
@@ -10,7 +12,17 @@ const Main = () => {
   const { result } = useResult();
   return (
     <Container>
-      {number && <Soma value={parseInt(number)} />}
+      {!number ? (
+        <h2> URL inválida</h2>
+      ) : operation === "sum" ? (
+        <Soma value={parseInt(number)} />
+      ) : operation === "sub" ? (
+        <Subtracao value={parseInt(number)} />
+      ) : operation === "mul" ? (
+        <Multiplicacao value={parseInt(number)} />
+      ) : (
+        <h2> URL inválida</h2>
+      )}
       <Results {...result} />
       <Link to="/">Voltar</Link>
     </Container>
