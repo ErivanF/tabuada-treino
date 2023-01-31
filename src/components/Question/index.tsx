@@ -47,7 +47,7 @@ const Question = ({ question, answer, next }: QuestionProps) => {
         </div>
       ) : (
         <div className="result">
-          <p>
+          <p className={input === answer ? "correto" : "errado"}>
             {input === answer
               ? "Resposta correta"
               : `Incorreto. A resposta correta é ${answer}`}
