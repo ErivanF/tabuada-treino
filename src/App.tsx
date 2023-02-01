@@ -2,6 +2,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Selection from "./pages/selection";
 import Main from "./pages/main";
+import Footer from "./components/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
+      <Footer />
     </div>
   );
 }
