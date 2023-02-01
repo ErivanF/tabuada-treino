@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border: 1px solid honeydew;
+  width: 45vw;
+    height: 65vh;
+    background-color: rgba(33, 33, 33, 0.88);
+    border-radius: 5px;
+    box-shadow: 3px 4px solid black;
+    box-shadow: 1px #00000047;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 25%);
+
+  h2 {
+    font-size: 24px;
+  }
 `;
