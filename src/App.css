@@ -1,5 +1,5 @@
 .App {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fira Code', monospace;
   text-align: center;
   background-image: url(/background.png);
   background-size: cover;
@@ -10,4 +10,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+  
 }
