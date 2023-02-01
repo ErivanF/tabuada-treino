@@ -5,8 +5,6 @@ export const Container = styled.div`
     height: 65vh;
     background-color: rgba(33, 33, 33, 0.88);
     border-radius: 5px;
-    box-shadow: 3px 4px solid black;
-    box-shadow: 1px #00000047;
     box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 25%);
 
   h2 {
