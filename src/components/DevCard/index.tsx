@@ -1,4 +1,6 @@
 import { Container } from "./style";
+import { FiGithub } from "react-icons/fi";
+import { AiOutlineLinkedin } from "react-icons/ai";
 
 interface CardProps {
   name: string;
@@ -13,10 +15,10 @@ const DevCard = ({ name, description, github, linkedin }: CardProps) => {
       <h3>{name}</h3>
       <p>{description}</p>
       <a href={github} target="_blank" rel="noopener noreferrer">
-        Github
+        <FiGithub />
       </a>
       <a href={linkedin} target="_blank" rel="noopener noreferrer">
-        LinkedIn
+        <AiOutlineLinkedin />
       </a>
     </Container>
   );
