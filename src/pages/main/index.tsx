@@ -15,7 +15,7 @@ const Main = () => {
     <Container>
       {!number ? (
         <h2> URL inválida</h2>
-      ) : operation === "sum" ? (
+      ) : operation === "som" ? (
         <Soma value={parseInt(number)} />
       ) : operation === "sub" ? (
         <Subtracao value={parseInt(number)} />
