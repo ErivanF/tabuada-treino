@@ -9,7 +9,7 @@ export const Container = styled.footer`
     height: 11vh;
 
     h4 {
-        font-size: 12px;
+        font-size: 11px;
     }
 
 
@@ -17,11 +17,13 @@ export const Container = styled.footer`
         float: left;
         width: 50%;
         margin-top: -30px;
+        font-size: 9px;
     }
 
     .container-erivan {
         float: right;
         width: 50%;
         margin-top: -30px;
+        font-size: 9px;
     }
 `;

@@ -7,6 +7,6 @@ export const Container = styled.div`
   width: 50%;
   display: inline-block;
   label {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;

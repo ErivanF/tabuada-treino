@@ -8,7 +8,7 @@ export const Container = styled.div`
     box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 25%);
 
   h2 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
 
@@ -22,6 +22,7 @@ export const Container = styled.div`
     border: none;
     padding: 8px 30px;
     background: rgba(3, 9, 1, 0.97);
+    font-size: 13px;
 
     &:hover {
       transition: 0.5s ease-in-out;
