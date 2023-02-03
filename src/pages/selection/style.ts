@@ -10,4 +10,15 @@ export const Container = styled.div`
   h2 {
     font-size: 24px;
   }
+
+
+  button {
+        box-shadow: 0px 0px 5px #0a0a0a70;
+    color: white;
+    border-radius: 3px;
+    font-family: 'Fira Code';
+    border: none;
+    padding: 8px 30px;
+    background: rgba(3, 9, 1, 0.97);
+    }
 `;
