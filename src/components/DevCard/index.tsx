@@ -13,13 +13,13 @@ const DevCard = ({ name, description, github, linkedin }: CardProps) => {
   return (
     <Container>
       <h3>{name}</h3>
-      <p>{description}</p>
       <a href={github} target="_blank" rel="noopener noreferrer">
         <FiGithub />
       </a>
       <a href={linkedin} target="_blank" rel="noopener noreferrer">
         <AiOutlineLinkedin />
       </a>
+      <p>{description}</p>
     </Container>
   );
 };
