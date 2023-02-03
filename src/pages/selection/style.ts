@@ -13,7 +13,8 @@ export const Container = styled.div`
 
 
   button {
-        box-shadow: 0px 0px 5px #0a0a0a70;
+    box-shadow: 0px 0px 5px #0a0a0a70;
+    margin-top: 15px;
     color: white;
     border-radius: 3px;
     font-family: 'Fira Code';

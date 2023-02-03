@@ -5,8 +5,11 @@ export const Container = styled.div`
     display: inline-block;
   }
   a {
-    font-size: 2em;
+    font-size: 1.6em;
     color: #551a8b;
     margin-left: 1em;
+  }
+  p {
+    margin-top: -5px;
   }
 `;

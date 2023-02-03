@@ -5,6 +5,7 @@ export const Container = styled.div`
   float: left;
   width: 50%;
 
+
   label {
     font-size: 16px;
   }
