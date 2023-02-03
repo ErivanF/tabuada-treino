@@ -57,7 +57,7 @@ const Selection = () => {
             label={n.label}
           />
         ))}
-        <button onClick={methods.handleSubmit(start)}>Iniciar</button>
+        <button onClick={methods.handleSubmit(start)}>INICIAR</button>
       </FormProvider>
     </Container>
   );
