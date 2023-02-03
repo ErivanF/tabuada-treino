@@ -13,6 +13,7 @@ export const Container = styled.div`
 
 
   button {
+    cursor: pointer;
     box-shadow: 0px 0px 5px #0a0a0a70;
     margin-top: 15px;
     color: white;
@@ -21,5 +22,10 @@ export const Container = styled.div`
     border: none;
     padding: 8px 30px;
     background: rgba(3, 9, 1, 0.97);
+
+    &:hover {
+      transition: 0.5s ease-in-out;
+      box-shadow: 0px 0px 7px #0a0a0a;
+      }
     }
 `;

@@ -12,15 +12,6 @@ export const Container = styled.footer`
         font-size: 12px;
     }
 
-    button {
-        box-shadow: 0px 0px 5px #0a0a0a70;
-    color: white;
-    border-radius: 3px;
-    font-family: 'Fira Code';
-    border: none;
-    padding: 8px 30px;
-    background: rgba(3, 9, 1, 0.97);
-    }
 
     .container-the4nna {
         float: left;
