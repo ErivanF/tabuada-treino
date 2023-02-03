@@ -24,8 +24,8 @@ Desenvolvedor Fullstack, com experiência em React, Vue, Node, Flask, PHP, Banco
 
 #### **The4nna**
 
-Desenvolvedora Front-end com conhecimento em React e Angular;
-Designer UX/UI, com conhecimento em Figma;
+Desenvolvedora Front-end com conhecimento em React e Angular;  
+Designer UX/UI, com conhecimento em Figma;  
 Experiência em atendimento ao público e gestão de redes sociais.
 
 [GitHub](http://github.com/the4nna)
