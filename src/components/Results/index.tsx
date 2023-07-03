@@ -1,14 +1,12 @@
+import { useResult } from "../../providers/ResultProvider";
 import { Container } from "./style";
 
-interface IProps {
-  acertos: number;
-  erros: number;
-}
-const Results = ({ acertos, erros }: IProps) => {
+const Results = () => {
+  const { result } = useResult();
   return (
     <Container>
-      <div>Acertos: {acertos}</div>
-      <div>Erros: {erros}</div>
+      <div>Acertos: {result.acertos}</div>
+      <div>Erros: {result.erros}</div>
     </Container>
   );
 };
