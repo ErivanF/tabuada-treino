@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Question from "../Question";
+import QuestionDisplay from "../QuestionDisplay";
 interface iData {
   question: string;
   answer: string;
@@ -22,7 +22,7 @@ const Subtracao = ({ value }: { value: number }) => {
   const next = () => {
     setData(roll());
   };
-  return <Question {...data} next={next} />;
+  return <QuestionDisplay {...data} next={next} />;
 };
 
 export default Subtracao;
