@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useResult } from "../../providers/ResultProvider";
 import { Container } from "./style";
+import Feedback from "../Feedback";
 
 interface QuestionProps {
   question: string;
@@ -46,14 +47,11 @@ const QuestionDisplay = ({ question, answer, next }: QuestionProps) => {
           <input type="button" value="Responder" onClick={onSubmit} />
         </div>
       ) : (
-        <div className="result">
-          <p className={input === answer ? "correto" : "errado"}>
-            {input === answer
-              ? "Resposta correta"
-              : `Incorreto. A resposta correta é ${answer}`}
-          </p>
-          <input type="button" value="Próxima" onClick={reset} />
-        </div>
+        <Feedback
+          input={parseInt(input)}
+          isCorrect={answer === input}
+          reset={reset}
+        />
       )}
     </Container>
   );
