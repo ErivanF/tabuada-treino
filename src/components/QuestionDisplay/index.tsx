@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useResult } from "../../providers/ResultProvider";
 import { Container } from "./style";
 import Feedback from "../Feedback";
+import Question from "../Question";
 
 interface QuestionProps {
   question: string;
@@ -10,46 +11,32 @@ interface QuestionProps {
 }
 const QuestionDisplay = ({ question, answer, next }: QuestionProps) => {
   const { correct, wrong } = useResult();
-  const [input, setInput] = useState<string>("");
+  const [isCorrect, setIsCorrect] = useState<boolean>(true);
   const [displayQuestion, setDisplayQuestion] = useState<boolean>(true);
-  const onSubmit = () => {
+  const submit = (input: string) => {
     if (input) {
       if (input === answer) {
         correct();
+        setIsCorrect(true);
       } else {
         wrong();
+        setIsCorrect(false);
       }
       setDisplayQuestion(false);
     }
   };
   const reset = () => {
     next();
-    setInput("");
     setDisplayQuestion(true);
   };
   return (
     <Container>
       {displayQuestion ? (
-        <div className="display">
-          <div className="question">{question}</div>
-          <input
-            autoFocus={true}
-            type="number"
-            onChange={(e) => {
-              setInput(e.target.value);
-            }}
-            onKeyUp={(e) => {
-              if (e.key === "Enter") {
-                onSubmit();
-              }
-            }}
-          />
-          <input type="button" value="Responder" onClick={onSubmit} />
-        </div>
+        <Question question={question} submit={submit} />
       ) : (
         <Feedback
-          input={parseInt(input)}
-          isCorrect={answer === input}
+          answer={parseInt(answer)}
+          isCorrect={isCorrect}
           reset={reset}
         />
       )}
